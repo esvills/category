@@ -28,7 +28,7 @@ use Illuminate\Http\Request;
 use Mage2\Category\Models\Category;
 use Mage2\Product\Models\Product;
 use Mage2\Attribute\Models\ProductAttribute;
-use Mage2\System\Models\Configuration;
+use Mage2\Dashboard\Models\Configuration;
 use Mage2\Framework\System\Controllers\Controller;
 
 class CategoryViewController extends Controller
