@@ -25,9 +25,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Mage2\Catalog\Models\ProductAttributeGroup;
-use Mage2\Catalog\Models\AttributeDropdownOption;
-use Mage2\Catalog\Models\ProductAttribute;
+use Mage2\Attribute\Models\ProductAttributeGroup;
+use Mage2\Attribute\Models\AttributeDropdownOption;
+use Mage2\Attribute\Models\ProductAttribute;
 
 class Mage2CategorySchema extends Migration
 {

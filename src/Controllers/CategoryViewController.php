@@ -27,7 +27,7 @@ namespace Mage2\Category\Controllers;
 use Illuminate\Http\Request;
 use Mage2\Category\Models\Category;
 use Mage2\Product\Models\Product;
-use Mage2\Catalog\Models\ProductAttribute;
+use Mage2\Attribute\Models\ProductAttribute;
 use Mage2\System\Models\Configuration;
 use Mage2\Framework\System\Controllers\Controller;
 

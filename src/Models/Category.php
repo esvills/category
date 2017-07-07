@@ -26,10 +26,9 @@ namespace Mage2\Category\Models;
 
 use Mage2\Product\Models\Product;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Session;
 use Mage2\Framework\System\Models\BaseModel;
-use Mage2\Catalog\Models\ProductVarcharValue;
-use Mage2\Catalog\Models\ProductAttribute;
+use Mage2\Attribute\Models\ProductVarcharValue;
+use Mage2\Attribute\Models\ProductAttribute;
 
 
 class Category extends BaseModel
