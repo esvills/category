@@ -14,7 +14,7 @@
                 <div class="panel-body">
 
                     {!! Form::bind($category, ['method' => 'PUT', 'action' => route('admin.category.update', $category->id)]) !!}
-                    @include('admin.catalog.category._fields')
+                    @include('mage2-category::category._fields')
 
                     {!! Form::submit("Update Category",['class' => 'btn btn-primary']) !!}
                     {!! Form::button("cancel",['class' => 'btn disabled','onclick' => 'location="' . route('admin.category.index'). '"']) !!}

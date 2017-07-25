@@ -9,7 +9,7 @@
                 <div class="panel-body">
 
                     {!! Form::open(['action' =>  route('admin.category.store'),'method' => 'POST']) !!}
-                    @include('admin.catalog.category._fields')
+                    @include('mage2-category::category._fields')
 
                     <div class="input-field">
                         {!! Form::submit("Create Category",['class' => 'btn btn-primary']) !!}
