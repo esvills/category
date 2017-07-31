@@ -117,7 +117,7 @@ class Module extends BaseModule
 
     protected function registerTranslationPath()
     {
-        $this->loadTranslationsFrom(__DIR__ . "/views/lang", "mage2category");
+        $this->loadTranslationsFrom(__DIR__ . "/views/lang", "mage2-category");
     }
 
 
@@ -138,7 +138,6 @@ class Module extends BaseModule
     protected function registerViewPath()
     {
         $this->loadViewsFrom(__DIR__ . '/views/admin', 'mage2-category');
-        //View::addLocation(__DIR__ . '/views');
     }
 
     public function registerModuleListener()
