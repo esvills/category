@@ -104,7 +104,7 @@ class Module extends BaseModule
         $this->registerModuleYamlFile(__DIR__ . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'module.yaml');
         if (true === $this->getEnable()) {
             $this->mapWebRoutes();
-            //$this->registerPermissions();
+            $this->registerPermissions();
         }
 
     }
@@ -185,21 +185,21 @@ class Module extends BaseModule
      */
     protected function registerPermissions()
     {
+        /** State Permission Group */
+        $permissionGroup = Permission::get('category');
 
-        $permissions = [
+        $permissionGroup->put('title', 'Category Permissions');
+
+        $permissions = Collection::make([
             ['title' => 'Category List', 'routes' => 'admin.category.index'],
             ['title' => 'Category Create', 'routes' => "admin.category.create,admin.category.store"],
             ['title' => 'Category Edit', 'routes' => "admin.category.edit,admin.category.update"],
             ['title' => 'Category Destroy', 'routes' => "admin.category.destroy"],
-            ['title' => 'Product List', 'routes' => 'admin.product.index,admin.product.search'],
-            ['title' => 'Product Create ', 'routes' => "admin.product.create,admin.product.store,admin.product.upload-image"],
-            ['title' => 'Product Edit', 'routes' => "admin.product.edit,admin.product.update,admin.product.search,admin.product.upload-image"],
-            ['title' => 'Product Destroy', 'routes' => "admin.product.destroy", 'admin.product.search'],
-        ];
+        ]);
 
-        foreach ($permissions as $permission) {
-            Permission::add($permission);
-        }
+        $permissionGroup->put('routes', $permissions);
+
+        Permission::set('category',$permissionGroup);
     }
 
     public function registerModule()
