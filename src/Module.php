@@ -33,7 +33,7 @@ use Mage2\Framework\Module\Facades\Module as ModuleFacade;
 use Illuminate\Support\Facades\Event;
 use Mage2\Category\Listeners\ProductCategorySavingListener;
 use Mage2\Product\Events\ProductSavedEvent;
-
+use Illuminate\Support\Collection;
 
 class Module extends BaseModule
 {
