@@ -37,7 +37,8 @@ class CategoryController extends AdminController
 
     public function getDataGrid()
     {
-        return DataGrid::dataTableData(Category::query());
+
+        return DataGrid::dataTableData(Category::query())->get();
     }
 
 

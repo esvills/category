@@ -14,6 +14,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Slug</th>
+
                 <th>Edit</th>
                 <th>Destroy</th>
             </tr>
