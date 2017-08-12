@@ -27,8 +27,8 @@ namespace Mage2\Category\Controllers\Admin;
 use Illuminate\Support\Collection;
 use Mage2\Category\Models\Category;
 use Mage2\Category\Requests\CategoryRequest;
-use Mage2\Framework\System\Controllers\AdminController;
 use Mage2\Framework\DataGrid\Facades\DataGrid;
+use Mage2\Framework\System\Controllers\AdminController;
 use Illuminate\Support\Facades\Gate;
 use Mage2\User\Models\AdminUser;
 
