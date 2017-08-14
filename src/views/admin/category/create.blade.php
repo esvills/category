@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('mage2-dashboard::layouts.admin')
 
 
 @section('content')
