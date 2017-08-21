@@ -1,17 +1,15 @@
-@extends('mage2-dashboard::layouts.admin')
+@extends('mage2-framework::layouts.admin')
 
 @section('content')
+    <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-12">
 
-            <div class="panel-default panel">
-                <div class="panel-heading">
-
+            <div class="card-default card">
+                <div class="card-header">
                     Edit Category
-                    <!--<small>Sub title</small> -->
-
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
 
                     {!! Form::bind($category, ['method' => 'PUT', 'action' => route('admin.category.update', $category->id)]) !!}
                     @include('mage2-category::category._fields')
@@ -23,5 +21,6 @@
             </div>
 
         </div>
+    </div>
     </div>
 @endsection

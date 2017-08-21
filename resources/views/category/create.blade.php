@@ -1,12 +1,13 @@
-@extends('mage2-dashboard::layouts.admin')
+@extends('mage2-framework::layouts.admin')
 
 
 @section('content')
+    <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Create Category</div>
-                <div class="panel-body">
+        <div class="col-12">
+            <div class="card card-default">
+                <div class="card-header">Create Category</div>
+                <div class="card-body">
 
                     {!! Form::open(['action' =>  route('admin.category.store'),'method' => 'POST']) !!}
                     @include('mage2-category::category._fields')
@@ -20,5 +21,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection

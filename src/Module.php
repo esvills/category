@@ -84,7 +84,7 @@ class Module extends BaseModule
     public function boot()
     {
         if (true === $this->getEnable()) {
-            $this->registerModule();
+            //$this->registerModule();
             $this->registerAdminMenu();
             $this->registerAdminConfiguration();
             $this->registerViewPath();
@@ -111,13 +111,12 @@ class Module extends BaseModule
 
     public function registerDatabasePath()
     {
-        $dbPath = $this->getPath() . DIRECTORY_SEPARATOR . "database";
-        $this->loadMigrationsFrom($dbPath);
+        $this->loadMigrationsFrom(__DIR__ ."/../database/migrations");
     }
 
     protected function registerTranslationPath()
     {
-        $this->loadTranslationsFrom(__DIR__ . "/views/lang", "mage2-category");
+        $this->loadTranslationsFrom(__DIR__ . "/resources/lang", "mage2-category");
     }
 
 
@@ -132,12 +131,12 @@ class Module extends BaseModule
      */
     protected function mapWebRoutes()
     {
-        require __DIR__ . '/routes/web.php';
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
     }
 
     protected function registerViewPath()
     {
-        $this->loadViewsFrom(__DIR__ . '/views/admin', 'mage2-category');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'mage2-category');
     }
 
     public function registerModuleListener()
@@ -200,23 +199,6 @@ class Module extends BaseModule
         $permissionGroup->put('routes', $permissions);
 
         Permission::set('category',$permissionGroup);
-    }
-
-    public function registerModule()
-    {
-        ModuleFacade::put($this->getIdentifier(), $this, $type = 'system');
-    }
-
-
-    public function getNameSpace()
-    {
-        return __NAMESPACE__;
-    }
-
-
-    public function getPath()
-    {
-        return __DIR__;
     }
 
 }

@@ -1,12 +1,13 @@
-@extends('mage2-dashboard::layouts.admin')
+@extends('mage2-framework::layouts.admin')
 
 @section('content')
     <div class="container">
-        <h1>
-            <span class="main-title-wrap">Category List</span>
-            <a style="" href="{{ route('admin.category.create') }}" class="btn btn-primary pull-right">Create
+
+        <div class="h1">Category List
+            <a style="" href="{{ route('admin.category.create') }}" class="btn btn-primary float-right">Create
                 Category</a>
-        </h1>
+        </div>
+
 
         <table class="table table-bordered" id="category-table">
             <thead>
