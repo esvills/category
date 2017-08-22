@@ -49,7 +49,26 @@ class CategoryController extends AdminController
      */
     public function index()
     {
-        return view('mage2-category::category.index');
+
+        $dataGrid = DataGrid::model(Category::query())
+                        ->column('name',['label' => 'Name','sortable' => true])
+                        ->column('slug',['sortable' => true])
+                        ->linkColumn('edit',[], function($model) {
+                            return "<a href='". route('admin.category.edit', $model->id)."' >Edit</a>";
+
+                        })->linkColumn('destroy',[], function($model) {
+                            return "<form id='admin-category-destroy-".$model->id."'
+                                            method='POST'
+                                            action='".route('admin.category.destroy', $model->id) ."'>
+                                        <input name='_method' type='hidden' value='DELETE' />
+                                        ". csrf_field()."
+                                        <a href='#'
+                                            onclick=\"jQuery('#admin-category-destroy-$model->id').submit()\"
+                                            >Destroy</a>
+                                    </form>";
+                        });
+
+        return view('mage2-category::category.new')->with('dataGrid', $dataGrid);
     }
 
     /**
