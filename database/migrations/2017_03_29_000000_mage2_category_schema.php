@@ -45,8 +45,6 @@ class Mage2CategorySchema extends Migration
             $table->string('name');
             $table->string('slug');
             $table->timestamps();
-
-            $table->foreign('parent_id')->references('id')->on('categories')->onDelete('cascade');
         });
 
         Schema::create('category_product', function (Blueprint $table) {
